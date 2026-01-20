@@ -67,13 +67,34 @@
     "href": "index.html#the-question",
     "title": "The Cost of Speed",
     "section": "The Question",
-    "text": "The Question\nIn 2023, Major League Baseball introduced the most radical rule change in the sport’s history: The Pitch Clock.\nThe goal was simple: eliminate dead time and make the game more exciting. By that metric, it was a massive success. Games were shorter, crisper, and more action-packed.\nBut there was a hidden variable. As the pace quickened, pitchers were forced to recover in seconds rather than minutes. Yet, they refused to sacrifice velocity. This project investigates the physiological cost of that decision."
+    "text": "The Question\nIn 2023, Major League Baseball introduced the most radical rule change in the sport’s history: The Pitch Clock.\nThe goal was simple: eliminate dead time and make the game more exciting. By that metric, it was a massive success. Games were shorter, crisper, and more action-packed.\nBut there was a hidden variable. As the chart above demonstrates, pitchers were forced into a recovery window they had never experienced before. Yet, they refused to sacrifice velocity. This project investigates the physiological cost of that decision."
   },
   {
     "objectID": "index.html#explore-the-analysis",
     "href": "index.html#explore-the-analysis",
     "title": "The Cost of Speed",
     "section": "Explore the Analysis",
-    "text": "Explore the Analysis\n\nPart 1: The Shift\nHow the game changed overnight. We visualize the massive reduction in recovery time and the immediate correlation with the rise in elbow injuries. → Go to The Clock Analysis\n\n\n\nPart 2: The Red Zone\nWhy didn’t they just slow down? An interactive deep-dive into specific injured aces (like Jacob deGrom and Felix Bautista) to see how they maintained max velocity even as their bodies reached the breaking point. → Go to Velocity Analysis\n\n\nAbout this Project\n\nAuthor: Luke Kimball\nData Source: MLB Statcast & Baseball Savant\nTools: R, ggplot2, Plotly, Quarto"
+    "text": "Explore the Analysis"
+  },
+  {
+    "objectID": "index.html#part-1-the-shift",
+    "href": "index.html#part-1-the-shift",
+    "title": "The Cost of Speed",
+    "section": "Part 1: The Shift",
+    "text": "Part 1: The Shift\nHow the game changed overnight. We visualize the data behind the new pace and the immediate correlation with the rise in elbow injuries. → Go to The Clock Analysis"
+  },
+  {
+    "objectID": "index.html#part-2-the-red-zone",
+    "href": "index.html#part-2-the-red-zone",
+    "title": "The Cost of Speed",
+    "section": "Part 2: The Red Zone",
+    "text": "Part 2: The Red Zone\nWhy didn’t they just slow down? An interactive deep-dive into specific injured aces (like Jacob deGrom and Felix Bautista) to see how they maintained max velocity even as their bodies reached the breaking point. → Go to Velocity Analysis"
+  },
+  {
+    "objectID": "index.html#about-this-project",
+    "href": "index.html#about-this-project",
+    "title": "The Cost of Speed",
+    "section": "About this Project",
+    "text": "About this Project\nAuthor: Luke Kimball\nData Source: MLB Statcast & Baseball Savant\nTools: R, ggplot2, Plotly, Quarto"
   }
 ]
