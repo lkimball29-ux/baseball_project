@@ -65,14 +65,14 @@
   {
     "objectID": "index.html#the-question",
     "href": "index.html#the-question",
-    "title": "Project: The Cost of Speed",
+    "title": "The Cost of Speed",
     "section": "The Question",
     "text": "The Question\nIn 2023, Major League Baseball introduced the most radical rule change in the sport’s history: The Pitch Clock.\nThe goal was simple: eliminate dead time and make the game more exciting. By that metric, it was a massive success. Games were shorter, crisper, and more action-packed.\nBut there was a hidden variable. As the pace quickened, pitchers were forced to recover in seconds rather than minutes. Yet, they refused to sacrifice velocity. This project investigates the physiological cost of that decision."
   },
   {
     "objectID": "index.html#explore-the-analysis",
     "href": "index.html#explore-the-analysis",
-    "title": "Project: The Cost of Speed",
+    "title": "The Cost of Speed",
     "section": "Explore the Analysis",
     "text": "Explore the Analysis\n\nPart 1: The Shift\nHow the game changed overnight. We visualize the massive reduction in recovery time and the immediate correlation with the rise in elbow injuries. → Go to The Clock Analysis\n\n\n\nPart 2: The Red Zone\nWhy didn’t they just slow down? An interactive deep-dive into specific injured aces (like Jacob deGrom and Felix Bautista) to see how they maintained max velocity even as their bodies reached the breaking point. → Go to Velocity Analysis\n\n\nAbout this Project\n\nAuthor: Luke Kimball\nData Source: MLB Statcast & Baseball Savant\nTools: R, ggplot2, Plotly, Quarto"
   }

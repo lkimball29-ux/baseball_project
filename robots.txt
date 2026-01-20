@@ -1,1 +1,1 @@
-Sitemap: https://518e6f74-4dce-45a0-bb93-f12c3a6fb561.netlify.app/sitemap.xml
+Sitemap: https://lkimball29-ux.github.io/The-Cost-of-Speed/sitemap.xml
