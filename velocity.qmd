@@ -1,0 +1,183 @@
+---
+title: "Velocity Analysis: The Cost of Speed?"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(plotly)
+library(crosstalk)
+library(DT)
+library(stringr)
+library(tidyr)
+
+# 1. Load Data
+velocity_data <- read_rds("data/velocity_data.rds")
+
+# 2. Clean Names
+velocity_data <- velocity_data %>%
+  mutate(
+    player_clean = case_when(
+      str_detect(player_name, ",") ~ paste(str_trim(str_extract(player_name, "(?<=, ).*")), 
+                                         str_extract(player_name, ".*(?=,)"), sep=" "),
+      TRUE ~ player_name
+    )
+  )
+
+# 3. Define the Injured List
+injured_list <- c(
+  "Jacob deGrom", "Shohei Ohtani", "Shane McClanahan", "Sandy Alcantara",
+  "Felix Bautista", "Brandon Woodruff", "Dustin May", "Robbie Ray",
+  "Jeffrey Springs", "Luis Garcia", "Drew Rasmussen", "Tyler Mahle",
+  "Tony Gonsolin", "German Marquez", "Triston McKenzie", "Kris Bubic",
+  "Matthew Boyd", "Vince Velasquez", "Kyle Wright", "Liam Hendriks",
+  "Lou Trivino", "Antonio Senzatela"
+)
+
+colors <- c("Pre-Clock (2022)" = "#002D72", "Post-Clock (2023)" = "#D50032")
+```
+
+## 1. The "Red Zone" Theory
+
+When the pitch clock forced pitchers to work faster, simple physiology suggested they should throw slower to conserve energy.
+
+They didn't.
+
+Instead, despite having 25% less recovery time, the league's most fragile aces continued to throw max-effort fastballs. This created a "Red Zone"—a state of constant fatigue without a drop in intensity.
+
+## 2. The Refusal to Slow Down
+
+The chart below tracks 22 elite pitchers who suffered major arm injuries in 2023. We compared their median fastball velocity in the year they got hurt (Red) versus the year prior (Blue).
+
+Key Takeaway: Look how many Red dots are to the right of the Blue dots. Even as their bodies were breaking down, they were throwing harder.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8
+
+# --- GRAPH 1: DUMBBELL CHART ---
+
+# 1. Calculate Medians per Player per Year
+median_stats <- velocity_data %>%
+  filter(player_clean %in% injured_list) %>%
+  group_by(player_clean, era) %>%
+  summarize(median_velo = median(release_speed, na.rm = TRUE), .groups = "drop")
+
+# 2. Reshape for Dumbbell Plot (Wide Format)
+dumbbell_data <- median_stats %>%
+  pivot_wider(names_from = era, values_from = median_velo) %>%
+  filter(!is.na(`Pre-Clock (2022)`) & !is.na(`Post-Clock (2023)`)) %>%
+  mutate(change = `Post-Clock (2023)` - `Pre-Clock (2022)`) %>%
+  arrange(desc(change)) 
+
+# 3. Create the Dumbbell Plot
+ggplot(dumbbell_data) +
+  geom_segment(aes(y = reorder(player_clean, change), yend = player_clean,
+                   x = `Pre-Clock (2022)`, xend = `Post-Clock (2023)`),
+               color = "grey60", linewidth = 1) +
+  geom_point(aes(y = player_clean, x = `Pre-Clock (2022)`, color = "Pre-Clock (2022)"), size = 4) +
+  geom_point(aes(y = player_clean, x = `Post-Clock (2023)`, color = "Post-Clock (2023)"), size = 4) +
+  scale_color_manual(values = colors) +
+  labs(title = "Velocity Change Before Injury",
+       subtitle = "Most injured pitchers maintained or increased velocity in 2023",
+       x = "Median Velocity (MPH)", y = "") +
+  theme_minimal() +
+  theme(legend.position = "top",
+        panel.grid.major.y = element_blank())
+```
+
+## 3. Under the Microscope
+
+Averages can hide the truth. To understand the strain on these arms, we need to look at the consistency of their pitches.
+
+Use the tool below to inspect the Velocity Distribution of any injured pitcher.
+
+
+
+How to read this chart
+The Box: Shows the "normal range" of their fastball.
+
+The Black Diamond: Represents their Median velocity.
+
+The Dots: Individual pitches. 
+
+Select a pitcher (e.g., Jacob deGrom or Felix Bautista) to begin investigation:
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+# --- GRAPH 2: INTERACTIVE (FIXED MEDIAN) ---
+
+# 1. Prepare Data & Calculate Medians First
+interactive_data <- velocity_data %>%
+  filter(player_clean %in% injured_list) %>% 
+  group_by(player_clean, era) %>%
+  mutate(median_val = median(release_speed, na.rm = TRUE)) %>%
+  slice_sample(n = 100) %>% 
+  ungroup() %>%
+  select(player_clean, game_date, release_speed, era, median_val) %>% 
+  rename(Player = player_clean, Date = game_date, Velocity = release_speed, Era = era)
+
+# 2. Setup Shared Data
+shared_velo <- SharedData$new(interactive_data)
+
+# 3. Search Box
+search_box <- filter_select(
+  id = "player_search", 
+  label = "Select Pitcher:", 
+  sharedData = shared_velo, 
+  group = ~Player
+)
+
+# 4. Create the Plot
+p_search <- ggplot(shared_velo, aes(x = Era, y = Velocity, fill = Era, color = Era)) +
+  geom_boxplot(width = 0.4, fill = "white", color = "black", outlier.shape = NA, alpha = 0.5) +
+  geom_jitter(width = 0.15, size = 1.5, alpha = 0.4) +
+  
+  # THE MEDIAN FIX
+  geom_point(aes(y = median_val), shape = 18, size = 5, color = "black", fill = "black") +
+  
+  scale_fill_manual(values = colors) +
+  scale_color_manual(values = colors) +
+  labs(title = "Velocity Profile",
+       y = "Velocity (MPH)", x = "") +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+# 5. Stack them
+bscols(
+  widths = c(12, 12, 12),
+  search_box,
+  ggplotly(p_search, tooltip = c("y", "x")), 
+  datatable(shared_velo, 
+            rownames = FALSE,
+            extensions = 'Scroller',
+            options = list(
+              deferRender = TRUE, 
+              scrollY = 300, 
+              scroller = TRUE,
+              searching = FALSE, 
+              dom = "t",
+              columnDefs = list(list(visible=FALSE, targets=4)) 
+            )) 
+)
+```
+
+Conclusion
+
+The data suggests a dangerous correlation: as the clock sped up the game, pitchers refused to slow down their fastballs. The result was a generation of arms pushed beyond their physiological limit.
+
+← Back to Context | Home

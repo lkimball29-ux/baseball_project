@@ -1,0 +1,23 @@
+project:
+  type: website
+website:
+  title: "Baseball Analytics Project"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: velocity.qmd
+        text: "Velocity vs Injuries"
+      - href: clock.qmd
+        text: "Pitch Clock Impact"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
+
+

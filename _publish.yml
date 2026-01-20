@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 518e6f74-4dce-45a0-bb93-f12c3a6fb561
+      url: https://luke.quarto.pub/baseball-analytics-project

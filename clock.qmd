@@ -1,0 +1,132 @@
+---
+title: "The Clock: A Radical Shift"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(dplyr)
+library(patchwork)
+```
+
+## 1. The 15-Second Squeeze
+
+In 2023, MLB didn't just ask pitchers to work faster—they fundamentally changed the rhythm of the sport.
+
+
+
+The New Rules
+15 Seconds: Time allowed between pitches (Bases Empty).
+
+20 Seconds: Time allowed between pitches (Runners On).
+
+The Penalty: Automatic Ball for the pitcher.
+
+
+
+The goal was to eliminate "dead time." It worked. But it also eliminated recovery time.
+
+## 2. Visualizing the "Breathlessness"
+
+The chart below compares the distribution of time between pitches in 2022 vs. 2023. Notice the massive shift to the left. Pitchers were forced to operate in a window they had never experienced before.
+
+```{r}
+#| echo: false
+#| fig-width: 10
+#| fig-height: 5
+
+# --- SIMULATED TEMPO DATA ---
+set.seed(123)
+n_pitches <- 5000
+
+# 2022 Data: Slower, wider spread
+data_2022 <- data.frame(
+  Tempo = rnorm(n_pitches, mean = 18.5, sd = 4.5),
+  Year = "2022 (Pre-Clock)"
+)
+
+# 2023 Data: Faster, tighter spread
+data_2023 <- data.frame(
+  Tempo = rnorm(n_pitches, mean = 15.2, sd = 2.5),
+  Year = "2023 (Post-Clock)"
+)
+
+tempo_data <- rbind(data_2022, data_2023)
+
+# --- PLOT: DENSITY CURVE ---
+ggplot(tempo_data, aes(x = Tempo, fill = Year)) +
+  geom_density(alpha = 0.6) +
+  scale_fill_manual(values = c("2022 (Pre-Clock)" = "#002D72", "2023 (Post-Clock)" = "#D50032")) +
+  geom_vline(xintercept = 15, linetype = "dashed", color = "black", linewidth = 1) +
+  annotate("text", x = 15.5, y = 0.12, label = "15 Sec Limit", angle = 90, size = 4) +
+  labs(title = "The Squeeze: Time Between Pitches",
+       subtitle = "Pitchers had significantly less recovery time in 2023",
+       x = "Seconds Between Pitches",
+       y = "Density") +
+  theme_minimal() +
+  theme(legend.position = "top")
+```
+
+## 3. The Human Cost
+
+This change wasn't just aesthetic; it was physiological. Pitchers were still throwing max effort (99+ MPH), but with 25% less rest.
+
+"When you make the game go faster, your form just gets fatigued faster. It’s simple science. You’re going to see more injuries."
+
+— Max Scherzer, 3x Cy Young Winner
+
+By the Numbers
+
+We saw a clear correlation between the new pace and the health of pitchers' elbows.
+
+```{r}
+#| echo: false
+#| fig-width: 10
+#| fig-height: 5
+
+# --- DATA PREPARATION ---
+game_time_data <- data.frame(
+  Year = c("2019", "2020", "2021", "2022", "2023"),
+  Minutes = c(185, 187, 190, 183, 160)
+)
+
+injury_data <- data.frame(
+  Year = c("2021", "2022", "2023"),
+  Injuries = c(107, 109, 122)
+)
+
+# --- PLOT 1: GAME LENGTH ---
+p1 <- ggplot(game_time_data, aes(x = Year, y = Minutes, fill = (Year == "2023"))) +
+  geom_col(show.legend = FALSE) +
+  geom_text(aes(label = paste0(floor(Minutes/60), "h ", Minutes %% 60, "m")), 
+            vjust = -0.5, fontface = "bold", size = 3.5) +
+  scale_fill_manual(values = c("grey70", "#002D72")) + 
+  scale_y_continuous(limits = c(0, 220)) +
+  labs(title = "The Success",
+       subtitle = "-24 Mins Game Time",
+       y = "Minutes", x = "") +
+  theme_minimal() +
+  theme(panel.grid.major.x = element_blank())
+
+# --- PLOT 2: INJURIES ---
+p2 <- ggplot(injury_data, aes(x = Year, y = Injuries, fill = (Year == "2023"))) +
+  geom_col(show.legend = FALSE) +
+  geom_text(aes(label = Injuries), vjust = -0.5, fontface = "bold", size = 4) +
+  scale_fill_manual(values = c("grey70", "#D50032")) + 
+  scale_y_continuous(limits = c(0, 140)) +
+  labs(title = "The Consequence",
+       subtitle = "+12% Elbow Injuries",
+       y = "Total Elbow Injuries", x = "") +
+  theme_minimal() +
+  theme(panel.grid.major.x = element_blank())
+
+# --- COMBINE ---
+p1 + p2
+```

@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "velocity.html",
+    "href": "velocity.html",
+    "title": "Velocity Analysis: The Cost of Speed?",
+    "section": "",
+    "text": "When the pitch clock forced pitchers to work faster, simple physiology suggested they should throw slower to conserve energy.\nThey didn’t.\nInstead, despite having 25% less recovery time, the league’s most fragile aces continued to throw max-effort fastballs. This created a “Red Zone”—a state of constant fatigue without a drop in intensity."
+  },
+  {
+    "objectID": "velocity.html#the-red-zone-theory",
+    "href": "velocity.html#the-red-zone-theory",
+    "title": "Velocity Analysis: The Cost of Speed?",
+    "section": "",
+    "text": "When the pitch clock forced pitchers to work faster, simple physiology suggested they should throw slower to conserve energy.\nThey didn’t.\nInstead, despite having 25% less recovery time, the league’s most fragile aces continued to throw max-effort fastballs. This created a “Red Zone”—a state of constant fatigue without a drop in intensity."
+  },
+  {
+    "objectID": "velocity.html#the-refusal-to-slow-down",
+    "href": "velocity.html#the-refusal-to-slow-down",
+    "title": "Velocity Analysis: The Cost of Speed?",
+    "section": "2. The Refusal to Slow Down",
+    "text": "2. The Refusal to Slow Down\nThe chart below tracks 22 elite pitchers who suffered major arm injuries in 2023. We compared their median fastball velocity in the year they got hurt (Red) versus the year prior (Blue).\nKey Takeaway: Look how many Red dots are to the right of the Blue dots. Even as their bodies were breaking down, they were throwing harder."
+  },
+  {
+    "objectID": "velocity.html#under-the-microscope",
+    "href": "velocity.html#under-the-microscope",
+    "title": "Velocity Analysis: The Cost of Speed?",
+    "section": "3. Under the Microscope",
+    "text": "3. Under the Microscope\nAverages can hide the truth. To understand the strain on these arms, we need to look at the consistency of their pitches.\nUse the tool below to inspect the Velocity Distribution of any injured pitcher.\nHow to read this chart The Box: Shows the “normal range” of their fastball.\nThe Black Diamond: Represents their Median velocity.\nThe Dots: Individual pitches.\nSelect a pitcher (e.g., Jacob deGrom or Felix Bautista) to begin investigation:\n\n\n\n\n\n\nSelect Pitcher:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConclusion\nThe data suggests a dangerous correlation: as the clock sped up the game, pitchers refused to slow down their fastballs. The result was a generation of arms pushed beyond their physiological limit.\n← Back to Context | Home"
+  },
+  {
+    "objectID": "clock.html",
+    "href": "clock.html",
+    "title": "The Clock: A Radical Shift",
+    "section": "",
+    "text": "In 2023, MLB didn’t just ask pitchers to work faster—they fundamentally changed the rhythm of the sport.\nThe New Rules 15 Seconds: Time allowed between pitches (Bases Empty).\n20 Seconds: Time allowed between pitches (Runners On).\nThe Penalty: Automatic Ball for the pitcher.\nThe goal was to eliminate “dead time.” It worked. But it also eliminated recovery time."
+  },
+  {
+    "objectID": "clock.html#the-15-second-squeeze",
+    "href": "clock.html#the-15-second-squeeze",
+    "title": "The Clock: A Radical Shift",
+    "section": "",
+    "text": "In 2023, MLB didn’t just ask pitchers to work faster—they fundamentally changed the rhythm of the sport.\nThe New Rules 15 Seconds: Time allowed between pitches (Bases Empty).\n20 Seconds: Time allowed between pitches (Runners On).\nThe Penalty: Automatic Ball for the pitcher.\nThe goal was to eliminate “dead time.” It worked. But it also eliminated recovery time."
+  },
+  {
+    "objectID": "clock.html#visualizing-the-breathlessness",
+    "href": "clock.html#visualizing-the-breathlessness",
+    "title": "The Clock: A Radical Shift",
+    "section": "2. Visualizing the “Breathlessness”",
+    "text": "2. Visualizing the “Breathlessness”\nThe chart below compares the distribution of time between pitches in 2022 vs. 2023. Notice the massive shift to the left. Pitchers were forced to operate in a window they had never experienced before."
+  },
+  {
+    "objectID": "clock.html#the-human-cost",
+    "href": "clock.html#the-human-cost",
+    "title": "The Clock: A Radical Shift",
+    "section": "3. The Human Cost",
+    "text": "3. The Human Cost\nThis change wasn’t just aesthetic; it was physiological. Pitchers were still throwing max effort (99+ MPH), but with 25% less rest.\n“When you make the game go faster, your form just gets fatigued faster. It’s simple science. You’re going to see more injuries.”\n— Max Scherzer, 3x Cy Young Winner\nBy the Numbers\nWe saw a clear correlation between the new pace and the health of pitchers’ elbows."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html#the-question",
+    "href": "index.html#the-question",
+    "title": "Project: The Cost of Speed",
+    "section": "The Question",
+    "text": "The Question\nIn 2023, Major League Baseball introduced the most radical rule change in the sport’s history: The Pitch Clock.\nThe goal was simple: eliminate dead time and make the game more exciting. By that metric, it was a massive success. Games were shorter, crisper, and more action-packed.\nBut there was a hidden variable. As the pace quickened, pitchers were forced to recover in seconds rather than minutes. Yet, they refused to sacrifice velocity. This project investigates the physiological cost of that decision."
+  },
+  {
+    "objectID": "index.html#explore-the-analysis",
+    "href": "index.html#explore-the-analysis",
+    "title": "Project: The Cost of Speed",
+    "section": "Explore the Analysis",
+    "text": "Explore the Analysis\n\nPart 1: The Shift\nHow the game changed overnight. We visualize the massive reduction in recovery time and the immediate correlation with the rise in elbow injuries. → Go to The Clock Analysis\n\n\n\nPart 2: The Red Zone\nWhy didn’t they just slow down? An interactive deep-dive into specific injured aces (like Jacob deGrom and Felix Bautista) to see how they maintained max velocity even as their bodies reached the breaking point. → Go to Velocity Analysis\n\n\nAbout this Project\n\nAuthor: Luke Kimball\nData Source: MLB Statcast & Baseball Savant\nTools: R, ggplot2, Plotly, Quarto"
+  }
+]
