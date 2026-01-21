@@ -25,7 +25,14 @@
     "href": "velocity.html#under-the-microscope",
     "title": "Velocity Analysis: The Cost of Speed?",
     "section": "3. Under the Microscope",
-    "text": "3. Under the Microscope\nAverages can hide the truth. To understand the strain on these arms, we need to look at the consistency of their pitches.\nUse the tool below to inspect the Velocity Distribution of any injured pitcher.\nHow to read this chart The Box: Shows the “normal range” of their fastball.\nThe Black Diamond: Represents their Median velocity.\nThe Dots: Individual pitches.\nSelect a pitcher (e.g., Jacob deGrom or Felix Bautista) to begin investigation:\n\n\n\n\n\n\nSelect Pitcher:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConclusion\nThe data suggests a dangerous correlation: as the clock sped up the game, pitchers refused to slow down their fastballs. The result was a generation of arms pushed beyond their physiological limit.\n← Back to Context | Home"
+    "text": "3. Under the Microscope\nAverages can hide the truth. To understand the strain on these arms, we need to look at the consistency of their pitches.\nUse the tool below to inspect the Velocity Distribution of any injured pitcher.\nHow to read this chart\nThe Box: Shows the “normal range” of their fastball.\nThe Black Diamond: Represents their Median velocity.\nThe Dots: Individual pitches.\nSelect a pitcher (e.g., Jacob deGrom or Felix Bautista) to begin investigation:\n\n\n\n\n\n\nSelect Pitcher:"
+  },
+  {
+    "objectID": "velocity.html#conclusion",
+    "href": "velocity.html#conclusion",
+    "title": "Velocity Analysis: The Cost of Speed?",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe data suggests a dangerous correlation: as the clock sped up the game, pitchers refused to slow down their fastballs. The result was a generation of arms pushed beyond their physiological limit.\n← Back to Context | Home"
   },
   {
     "objectID": "fatigue.html",
@@ -52,8 +59,8 @@
     "objectID": "fatigue.html#analysis",
     "href": "fatigue.html#analysis",
     "title": "The Fatigue Factor",
-    "section": "Analysis",
-    "text": "Analysis\nWhat this shows: Since the end point for 2023 is higher than the starting point, it shows that pitchers not only maintained their velocity during the game, but actually increased it."
+    "section": "Analysis:",
+    "text": "Analysis:\nYou will notice a counter-intuitive trend where velocity appears to increase in later innings (Innings 6-7). This is likely due to Survivor Bias: pitchers who lose velocity or fatigue are removed from the game early. The only pitchers remaining in the 7th inning are the ones capable of sustaining elite velocity.\nThe Critical Finding: Even with the “Survivor Bias” factored in, the 2023 data (Red Line) confirms our thesis. Despite having significantly less recovery time, the pitchers who stayed in the game refused to throttle down. They continued to throw max-effort fastballs deep into the game, ignoring the physiological need to conserve energy."
   },
   {
     "objectID": "about.html",
@@ -67,14 +74,14 @@
     "href": "clock.html",
     "title": "The Clock: A Radical Shift",
     "section": "",
-    "text": "In 2023, MLB didn’t just ask pitchers to work faster—they fundamentally changed the rhythm of the sport.\nThe New Rules 15 Seconds: Time allowed between pitches (Bases Empty).\n20 Seconds: Time allowed between pitches (Runners On).\nThe Penalty: Automatic Ball for the pitcher.\nThe goal was to eliminate “dead time.” It worked. But it also eliminated recovery time."
+    "text": "In 2023, MLB didn’t just ask pitchers to work faster—they fundamentally changed the rhythm of the sport.\nThe New Rules\n15 Seconds: Time allowed between pitches (Bases Empty).\n20 Seconds: Time allowed between pitches (Runners On).\nThe Penalty: Automatic Ball for the pitcher.\nThe goal was to eliminate “dead time.” It worked. But it also eliminated recovery time."
   },
   {
     "objectID": "clock.html#the-15-second-squeeze",
     "href": "clock.html#the-15-second-squeeze",
     "title": "The Clock: A Radical Shift",
     "section": "",
-    "text": "In 2023, MLB didn’t just ask pitchers to work faster—they fundamentally changed the rhythm of the sport.\nThe New Rules 15 Seconds: Time allowed between pitches (Bases Empty).\n20 Seconds: Time allowed between pitches (Runners On).\nThe Penalty: Automatic Ball for the pitcher.\nThe goal was to eliminate “dead time.” It worked. But it also eliminated recovery time."
+    "text": "In 2023, MLB didn’t just ask pitchers to work faster—they fundamentally changed the rhythm of the sport.\nThe New Rules\n15 Seconds: Time allowed between pitches (Bases Empty).\n20 Seconds: Time allowed between pitches (Runners On).\nThe Penalty: Automatic Ball for the pitcher.\nThe goal was to eliminate “dead time.” It worked. But it also eliminated recovery time."
   },
   {
     "objectID": "clock.html#visualizing-the-breathlessness",
